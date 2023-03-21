@@ -1,0 +1,16 @@
+// @mixin flex-container(
+//   $flex-direction: row,
+
+//   $text-align: center
+// ) {
+//   display: flex;
+//   flex-direction: row;
+//   text-align: center;
+
+// }
+
+@mixin flex-container($text-align: center) {
+  display: flex;
+  flex-direction: column;
+  text-align: $text-align;
+}

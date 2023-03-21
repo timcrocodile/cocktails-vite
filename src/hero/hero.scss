@@ -1,33 +1,38 @@
 @import "/src/styles/variables";
+@import "/src/styles/mixins";
 
 .Hero {
   font-family: $primary-font-family;
-  //   color: white;
-  text-align: center;
-  //   background-color: aquamarine;
-  display: flex;
-  flex-direction: column;
-  //   background-image: url("https://img.freepik.com/free-vector/cute-crocodile-drink-orange-juice-wearing-glasses-cartoon-vector-icon-illustration-animal-flat_138676-7201.jpg?w=360");
+  text-shadow: 10px 10px 4px $secondary-color;
+  color: $primary-color;
+  @include flex-container();
+  // display: flex;
+  // text-align: center;
+
+  // flex-direction: column;
+
   &__List {
     display: flex;
     margin: 0 20px;
     padding: 0;
     list-style: none;
     gap: 30px;
-    transition: all 0.7s;
+
     & li {
-      background-color: aquamarine;
+      background-color: $secondary-color;
+      padding: 2px;
       border-radius: 5px;
       font-weight: bold;
       cursor: pointer;
+      transition: all 0.7s;
       &:hover {
-        color: grey;
+        color: $third-color;
       }
     }
   }
   & hr {
     width: 80%;
-    border: 1px groove grey;
+    border: 1px groove $third-color;
     border-width: 4px;
   }
 }

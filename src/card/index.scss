@@ -1,30 +1,56 @@
+@import "/src/styles/variables";
+
 .Card {
-  width: 300px;
-  height: 500px;
+  width: 260px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   margin: 0 20px;
   align-items: center;
+  border-radius: 12px;
   position: relative;
   margin-bottom: 10px;
-  margin-top: 10px;
-  margin: 0 20px;
+  margin-top: 20px;
+  box-shadow: 5px 5px 18px black;
+  // border: 1px solid red;
+
+  &__Text--Instructions {
+    color: $third-color;
+    // display: inline-block;
+    // width: 180px;
+    // white-space: nowrap;
+    // overflow: hidden !important;
+
+    // text-overflow: ellipsis;
+    cursor: pointer;
+  }
+
   &__Text {
     font-weight: bold;
     padding: 12px;
-    border: 2px solid red;
+    background-color: $secondary-color;
+    color: $third-color;
+
     position: absolute;
     bottom: 20px;
     width: 80%;
-    transform: translateY(40px);
-    background-color: white;
+    transform: translateY(50px);
+
+    border-radius: 12px;
+    &--hidden {
+      display: none;
+    }
   }
   img {
-    width: 300px;
-    height: 500px;
     object-fit: cover;
+    height: 400px;
+    width: 260px;
+
+    border-radius: 12px;
+    cursor: zoom-in;
   }
   ul {
     padding-left: 18px;
+    list-style: decimal;
   }
 }

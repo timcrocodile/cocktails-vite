@@ -1,7 +1,8 @@
 @import "/src/styles/variables";
+@import "/src/styles/mixins";
 
 .Navbar {
-  border: 2px solid black;
+  // border: 2px solid black;
   display: flex;
   justify-content: space-between;
   font-family: $primary-font-family;
@@ -14,10 +15,12 @@
     & li {
       font-weight: bold;
       cursor: pointer;
+      // background-color: $secondary-color;
+
       //   background-color: grey;
       transition: all 0.7s;
       &:hover {
-        color: grey;
+        color: $third-color;
       }
     }
   }
