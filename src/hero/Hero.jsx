@@ -17,6 +17,11 @@ const Hero = ({ SetCategory }) => {
         <li onClick={() => onHandleClick("Shot")}>Shot</li>
         <li onClick={() => onHandleClick("Ordinary Drink")}>Ordinary Drink</li>
         <li onClick={() => onHandleClick("Coffee / Tea")}>Coffee / Tea</li>
+        <li onClick={() => onHandleClick("Beer")}>Beer</li>
+        <li onClick={() => onHandleClick("Punch / Party Drink")}>
+          Punch / Party Drink
+        </li>
+        <li onClick={() => onHandleClick("Cocoa")}>Cocoa</li>
       </ul>
     </div>
   );
