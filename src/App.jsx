@@ -9,22 +9,23 @@ import { useState, useEffect } from "react";
 function App() {
   const [CocktailList, setCocktailList] = useState([]);
   const [Category, SetCategory] = useState("Cocktail");
+  const [filter, setfilter] = useState("a");
+
+  // useEffect(() => {
+  //   GET("/search.php?f=d").then(({ drinks }) => {
+  //     setCocktailList(() => drinks);
+  //   });
+  // }, []);
 
   useEffect(() => {
-    GET("/search.php?f=d").then(({ drinks }) => {
+    GET(`search.php?f=${filter}`).then(({ drinks }) => {
       setCocktailList(() => drinks);
     });
-  }, []);
+  }, [filter]);
 
-  useEffect(() => {
-    GET(`search.php?f=${Category}`).then(({ drinks }) => {
-      setCocktailList(() => drinks);
-    });
-  }, [Category]);
-
-  const onhandleClicka = () => SetCategory("a");
-  const onhandleClickb = () => SetCategory("b");
-  const onhandleClickc = () => SetCategory("c");
+  const onhandleClicka = () => setfilter("a");
+  const onhandleClickb = () => setfilter("b");
+  const onhandleClickc = () => setfilter("c");
 
   return (
     <div className="App">
