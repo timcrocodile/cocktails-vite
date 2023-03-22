@@ -1,0 +1,33 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.App {
+  background-color: $third-color;
+  /* background-image: url("https://img.freepik.com/free-vector/cute-crocodile-drink-orange-juice-wearing-glasses-cartoon-vector-icon-illustration-animal-flat_138676-7201.jpg?w=360"); */
+  .Paragrafo {
+    // @include background;
+    padding: 5px;
+    font-family: $primary-font-family;
+    color: $primary-color;
+    font-size: bold;
+  }
+  .Buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    // padding: 5px;
+    margin: 5px;
+
+    button {
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+      border-radius: 4px;
+      background-color: $secondary-color;
+      transition: all 0.7s;
+      &:hover {
+        color: $third-color;
+      }
+    }
+  }
+}

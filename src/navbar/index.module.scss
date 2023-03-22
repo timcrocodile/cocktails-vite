@@ -6,8 +6,11 @@
   display: flex;
   justify-content: space-between;
   font-family: $primary-font-family;
+  // background-image: url("https://images.unsplash.com/photo-1596404643764-2a2461483a3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bGltZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+  // background-size: contain;
+
   //   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  &__List {
+  .NavbarList {
     list-style: none;
     padding: none;
     display: flex;
@@ -20,14 +23,14 @@
       //   background-color: grey;
       transition: all 0.7s;
       &:hover {
-        color: $third-color;
+        color: $secondary-color;
       }
     }
   }
-  &__Image {
+  .NavbarImage {
     width: 80px;
   }
-  &__Button {
+  .NavbarButton {
     width: 150px;
     border: 0px;
     height: 50px;
@@ -37,7 +40,7 @@
     margin: 10px;
     &:hover {
       background-color: black;
-      color: white;
+      color: $secondary-color;
       cursor: pointer;
     }
   }

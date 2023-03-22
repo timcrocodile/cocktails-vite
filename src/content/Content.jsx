@@ -1,11 +1,11 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 import Card from "../card/Card";
 
-const Content = ({ obj }) => {
+const Content = ({ obj, setCardClick }) => {
   return (
-    <div className="Content">
+    <div className={styles.Content}>
       {obj.map((cocktail) => (
-        <Card obj={cocktail} />
+        <Card obj={cocktail} setCardClick={setCardClick} />
       ))}
     </div>
   );

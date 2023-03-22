@@ -1,0 +1,11 @@
+@import "/src/styles/variables";
+
+.Footer {
+  background-color: $secondary-color;
+  padding: 20px 0;
+  text-align: center;
+  .Paragrafo {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}

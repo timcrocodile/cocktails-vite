@@ -1,0 +1,30 @@
+.Singleitem {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  flex-wrap: nowrap;
+  height: 50px;
+
+  position: fixed;
+  .Singleitemtext {
+    width: 50%;
+    padding: 0 20px;
+  }
+
+  .Lists {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 0px;
+    flex-wrap: nowrap;
+  }
+  .Image {
+    width: 50%;
+  }
+
+  .Carousel {
+  }
+}

@@ -14,7 +14,7 @@
   box-shadow: 5px 5px 18px black;
   // border: 1px solid red;
 
-  &__Text--Instructions {
+  .cardInstructions {
     color: $third-color;
     // display: inline-block;
     // width: 180px;
@@ -25,7 +25,7 @@
     cursor: pointer;
   }
 
-  &__Text {
+  .CardText {
     font-weight: bold;
     padding: 12px;
     background-color: $secondary-color;
@@ -37,9 +37,9 @@
     transform: translateY(50px);
 
     border-radius: 12px;
-    &--hidden {
-      display: none;
-    }
+  }
+  .CardTexthidden {
+    display: none;
   }
   img {
     object-fit: cover;
@@ -52,5 +52,8 @@
   ul {
     padding-left: 18px;
     list-style: decimal;
+  }
+  .Infos {
+    cursor: pointer;
   }
 }
