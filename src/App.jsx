@@ -59,8 +59,8 @@ function App() {
   return (
     <div className={styles.App}>
       <Navbar />
-      {cardWasClicked ? (
-        <Singleitem.isVisible setCardClick={setCardClick} />
+      {cardWasClicked.isVisible ? (
+        <Singleitem setCardClick={setCardClick} obj={cardWasClicked.payload} />
       ) : (
         <>
           <Hero SetCategory={SetCategory} />

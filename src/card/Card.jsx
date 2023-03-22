@@ -8,7 +8,7 @@ const Card = ({ obj, setCardClick }) => {
   const onHandleClick = () =>
     setCardClick((prev) => ({
       ...prev,
-      payload: data,
+      payload: obj,
       isVisible: true,
     }));
 
