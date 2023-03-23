@@ -40,6 +40,9 @@ const Reservation = ({
     e.preventDefault();
     // console.log({ ReservationName, ReservationTime, ReservationDate });
     SetPopUpUp(true);
+    setTimeout(() => {
+      SetPopUpUp(false);
+    }, 2000);
   };
   //impostando il popup all'onHandleSubmit, il popup apparirà solo quando verranno compilati tutti i campi (required) e viene premuto il tasto invio,
   // quindi se il form viene completato parzialmente o non viene completato affatto e viene premuto il tasto submit il pop up non appare poichè
