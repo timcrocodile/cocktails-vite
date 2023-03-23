@@ -1,0 +1,13 @@
+.Popup {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: aquamarine;
+  border-radius: 12px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.75);
+  top: 20px;
+  width: 200px;
+  left: calc(50vw - 100px);
+  text-align: center;
+}

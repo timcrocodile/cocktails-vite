@@ -7,6 +7,8 @@ import { filteredList } from "./utils/func";
 import { useState, useEffect } from "react";
 import Footer from "./footer/Footer";
 import Singleitem from "./singleitem";
+import Reservation from "./reservation";
+import Popup from "../src/popup";
 
 function App() {
   const [CocktailList, setCocktailList] = useState([]);
@@ -16,6 +18,9 @@ function App() {
     isVisible: false,
     payload: {},
   });
+
+  const [ReservationFormIsActive, SetReservationFormActive] = useState(false);
+  const [IsPopUpUP, SetPopUpUp] = useState(false);
 
   // useEffect(() => {
   //   GET("/search.php?f=d").then(({ drinks }) => {
@@ -56,13 +61,33 @@ function App() {
   // const onhandleClickx = () => setfilter("x");
   const onhandleClicky = () => setfilter("y");
   const onhandleClickz = () => setfilter("z");
+
+  const [reservationTimeFromChild, setReservationTimeFromChild] = useState("");
+
+  const handleReservationTime = (time) => {
+    setReservationTimeFromChild(time);
+  };
+
+  const [reservationDatefromChild, setReservationDateFromChild] = useState("");
+  const handleReservationDate = (date) => {
+    setReservationDateFromChild(date);
+  };
   return (
     <div className={styles.App}>
-      <Navbar />
+      <Navbar SetReservationFormActive={SetReservationFormActive} />
       {cardWasClicked.isVisible ? (
         <Singleitem setCardClick={setCardClick} obj={cardWasClicked.payload} />
       ) : (
         <>
+          {ReservationFormIsActive && (
+            <Reservation
+              onReservationTimeChange={handleReservationTime}
+              onReservationDateChange={handleReservationDate}
+              SetPopUpUp={SetPopUpUp}
+              SetReservationFormActive={SetReservationFormActive}
+              ReservationFormIsActive={ReservationFormIsActive}
+            />
+          )}
           <Hero SetCategory={SetCategory} />
           {/* <hr /> */}
           <p className={styles.Paragrafo}>
@@ -104,6 +129,14 @@ function App() {
           />
           <Footer />
         </>
+      )}
+      {IsPopUpUP && (
+        <Popup>
+          <h3>
+            la tua prenotazione per le ore {reservationTimeFromChild} di{" "}
+            {reservationDatefromChild} è stata confermata!
+          </h3>
+        </Popup>
       )}
     </div>
   );

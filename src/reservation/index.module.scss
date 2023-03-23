@@ -1,0 +1,50 @@
+@import "/src/styles/variables";
+.Reservation {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  text-align: center;
+  font-family: $primary-font-family;
+  color: $primary-color;
+
+  .Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .Content {
+    position: fixed;
+    top: 25vh;
+    left: 5%;
+    height: 50vh;
+    width: 90%;
+    background-color: beige;
+    border-radius: 10px;
+  }
+
+  .Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    // padding: 0px;
+    font-family: $primary-font-family;
+
+    input {
+      width: 260px;
+      height: 30px;
+      border-bottom: 1 px solid black;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+  .visible {
+    opacity: 1;
+  }
+}
