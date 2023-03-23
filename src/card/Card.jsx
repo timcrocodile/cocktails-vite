@@ -22,14 +22,19 @@ const Card = ({ obj, setCardClick }) => {
 
   return (
     <div className={styles.Card}>
-      <button onClick={onHandleClick} className={styles.Infos}>
-        +INFOs
-      </button>
+      <div className={styles.Headings}>
+        <h4 className={styles.Title}>{obj.strDrink}</h4>
+        <button onClick={onHandleClick} className={styles.Infos}>
+          +INFOs
+        </button>
+      </div>
+
       <img
         src={obj.strDrinkThumb}
         alt={obj.strCategory}
-        onClick={handleImageClick}
+        onMouseOver={handleImageClick}
       />
+
       {/* { <div className="Card__Text"> }
       {<div className={`Card__Text ${isHidden ? "hidden" : ""}`}> } */}
       {/* <div className={`Card__Text ${isHidden ? "" : "Card__Text--hidden"}`}> */}

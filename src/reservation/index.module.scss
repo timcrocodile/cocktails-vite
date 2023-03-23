@@ -15,16 +15,19 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
   }
 
   .Content {
     position: fixed;
     top: 25vh;
     left: 5%;
-    height: 50vh;
+    height: 60vh;
     width: 90%;
     background-color: beige;
     border-radius: 10px;
+    overflow-y: scroll;
+    padding: 15px;
   }
 
   .Form {
@@ -39,6 +42,7 @@
     input {
       width: 260px;
       height: 30px;
+
       border-bottom: 1 px solid black;
       outline: none;
       cursor: pointer;
