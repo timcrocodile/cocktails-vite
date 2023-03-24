@@ -43,7 +43,7 @@ const Card = ({ obj, setCardClick }) => {
           isHidden ? "" : styles.CardTexthidden
         }`}
       >
-        <h3>{obj.strDrink}</h3>
+        <h3 className={styles.DrinkName}>{obj.strDrink} 🍹 </h3>
         <h3>Ingredienti :</h3>
         <ul>
           <li>{obj.strIngredient1}</li>

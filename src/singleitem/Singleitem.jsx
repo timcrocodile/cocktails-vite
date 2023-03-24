@@ -49,17 +49,19 @@ const Singleitem = ({ setCardClick, obj }) => {
             </li>
           ))}
         </ul>
-        <p>istruzioni : {obj.strInstructionsIT}</p>
+        <p className={styles.Instructions}>
+          Come Prepararlo : {obj.strInstructionsIT}
+        </p>
         <button className={styles.CloseBtn} onClick={onHandleClick}>
           x
         </button>
       </div>
       <div className={styles.Image}>
         <img src={obj.strDrinkThumb} alt={obj.stridDrink} />
-        <div className={styles.Carousel}>
+        {/* <div className={styles.Carousel}>
           <button>prev</button>
           <button>next</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -10,11 +10,13 @@
   // background-size: contain;
 
   //   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
   .NavbarList {
     list-style: none;
     padding: none;
     display: flex;
     gap: 15px;
+
     & li {
       font-weight: bold;
       cursor: pointer;
@@ -35,13 +37,76 @@
     border: 0px;
     height: 50px;
     font-family: $primary-font-family;
+    background-color: $secondary-color;
     border-radius: 5px;
     transition: all 0.5s;
     margin: 10px;
     &:hover {
-      background-color: black;
+      background-color: $third-color;
       color: $secondary-color;
       cursor: pointer;
+      font-weight: bold;
+      border-radius: 12px;
+      border: 4px solid $secondary-color;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    // flex-direction: column;
+    // align-items: flex-start;
+
+    // justify-content: flex-start;
+    // width: 700px;
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
+    font-family: $primary-font-family;
+    width: 700px;
+    background-color: orange;
+
+    // background-image: url("https://images.unsplash.com/photo-1596404643764-2a2461483a3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bGltZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+    // background-size: contain;
+
+    //   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    .NavbarList {
+      list-style: none;
+      padding: none;
+      display: flex;
+      gap: 15px;
+
+      & li {
+        font-weight: bold;
+        cursor: pointer;
+        // background-color: $secondary-color;
+
+        //   background-color: grey;
+        transition: all 0.7s;
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+    .NavbarImage {
+      width: 80px;
+    }
+    .NavbarButton {
+      width: 150px;
+      border: 0px;
+      height: 50px;
+      font-family: $primary-font-family;
+      background-color: $secondary-color;
+      border-radius: 5px;
+      transition: all 0.5s;
+      margin: 10px;
+      &:hover {
+        background-color: $third-color;
+        color: $secondary-color;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 12px;
+        border: 4px solid $secondary-color;
+      }
     }
   }
 }
