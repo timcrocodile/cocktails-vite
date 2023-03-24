@@ -33,5 +33,34 @@
   @media screen and (max-width: 768px) {
     width: 700px;
     //   padding: 10px;
+    .Paragrafo {
+      // @include background;
+      padding: 5px;
+      font-family: $primary-font-family;
+      color: $primary-color;
+      font-size: bold;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+    .Buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 0px;
+      // padding: 5px;
+      margin: 5px;
+
+      button {
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        border-radius: 4px;
+        background-color: $secondary-color;
+        transition: all 0.7s;
+        &:hover {
+          color: $third-color;
+        }
+      }
+    }
   }
 }

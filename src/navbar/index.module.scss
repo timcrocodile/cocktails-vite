@@ -98,6 +98,7 @@
       background-color: $secondary-color;
       border-radius: 5px;
       transition: all 0.5s;
+      font-size: small;
       margin: 10px;
       &:hover {
         background-color: $third-color;
@@ -106,6 +107,7 @@
         font-weight: bold;
         border-radius: 12px;
         border: 4px solid $secondary-color;
+        font-size: x-large;
       }
     }
   }
