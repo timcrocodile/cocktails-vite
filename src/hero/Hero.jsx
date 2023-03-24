@@ -41,6 +41,13 @@ display: flex;
       @media screen and (max-width: 768px){
        max-width :768px;
         overflow-x: scroll;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px 
+        &li {
+          font-size : 16px;
+          padding: 5px 10px;
+        }
         
       }
       `;
