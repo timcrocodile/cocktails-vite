@@ -75,7 +75,8 @@ const Card = ({ obj, setCardClick }) => {
             <h3>
               {" "}
               #tags
-              <AiFillTag /> {obj.strTags}
+              <AiFillTag />
+              {obj.strTags}
             </h3>
           </li>
           <li>

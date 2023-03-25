@@ -13,7 +13,7 @@ import Popup from "../src/popup";
 function App() {
   const [CocktailList, setCocktailList] = useState([]);
   const [Category, SetCategory] = useState("Cocktail");
-  const [filter, setfilter] = useState("a");
+  const [filter, setfilter] = useState("");
   const [cardWasClicked, setCardClick] = useState({
     isVisible: false,
     payload: {},
@@ -72,6 +72,15 @@ function App() {
   const handleReservationDate = (date) => {
     setReservationDateFromChild(date);
   };
+
+  const onHandleInput = (e) => setfilter(() => e.target.value);
+
+  const onHandleSubmit = (e) => {
+    e.preventDefault();
+    // TODO: trasmettere il valore della input (inputValue) all'elemento di ricerca
+    setfilter(filter);
+  };
+
   return (
     <div className={styles.App}>
       <Navbar SetReservationFormActive={SetReservationFormActive} />
@@ -91,9 +100,7 @@ function App() {
           <Hero SetCategory={SetCategory} />
           {/* <hr /> */}
           <p className={styles.Paragrafo}>
-            Al momento stai vedendo i "Cocktails" che iniziano con la lettera A,
-            andando a modificare i criteri di ricerca tramite i bottoni di
-            questa sezione puoi vedere tutti i cocktails del mondo🗺️
+            Con quale lettera inizia il nome del tuo Drink ?
           </p>
           <div className={styles.Buttons}>
             {<button onClick={onhandleClicka}>A</button>}
@@ -123,6 +130,17 @@ function App() {
             {<button onClick={onhandleClicky}>Y</button>}
             {<button onClick={onhandleClickz}>Z</button>}
           </div>
+          <form onSubmit={onHandleSubmit}>
+            <label htmlFor="text">Oppure digita l'iniziale..</label>
+            <input
+              value={filter}
+              onChange={onHandleInput}
+              type="text"
+              placeholder="Cerca prodotto ..."
+              required
+            />
+          </form>
+
           <Content
             obj={filteredList(CocktailList, "strCategory", Category)}
             setCardClick={setCardClick}

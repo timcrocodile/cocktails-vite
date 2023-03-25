@@ -3,6 +3,8 @@
 .Content {
   @include background;
   display: flex;
+
   gap: 20px;
   flex-wrap: wrap;
+  height: calc(100vh - 100px);
 }
