@@ -73,13 +73,22 @@ function App() {
     setReservationDateFromChild(date);
   };
 
-  const onHandleInput = (e) => setfilter(() => e.target.value);
+  const [InputFullName, SetInputFullName] = useState("");
+
+  const onHandleInput = (e) => SetInputFullName(() => e.target.value);
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
     // TODO: trasmettere il valore della input (inputValue) all'elemento di ricerca
-    setfilter(filter);
+    SetInputFullName();
   };
+
+  useEffect(() => {
+    GET(`search.php?s=${InputFullName}`).then(({ drinks }) => {
+      setCocktailList(() => drinks);
+    });
+  }, [InputFullName]);
+  //ancora non funziona bene perchè, li trova, ma per visualizzarli devo andare nella sezione dove sono presenti
 
   return (
     <div className={styles.App}>
@@ -133,7 +142,7 @@ function App() {
           <form onSubmit={onHandleSubmit}>
             <label htmlFor="text">Oppure digita l'iniziale..</label>
             <input
-              value={filter}
+              value={InputFullName}
               onChange={onHandleInput}
               type="text"
               placeholder="Cerca prodotto ..."
