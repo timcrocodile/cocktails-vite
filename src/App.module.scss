@@ -2,6 +2,9 @@
 @import "/src/styles/mixins";
 
 .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: $third-color;
   /* background-image: url("https://img.freepik.com/free-vector/cute-crocodile-drink-orange-juice-wearing-glasses-cartoon-vector-icon-illustration-animal-flat_138676-7201.jpg?w=360"); */
   .Paragrafo {

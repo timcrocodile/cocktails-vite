@@ -7,11 +7,6 @@ const Singleitem = ({ setCardClick, obj }) => {
       isVisible: false,
     }));
 
-  // const ingredients = [];
-  // for (let i = 1; obj[`strIngredient${i}`]; i++) {
-  //   ingredients.push(`${obj[`strIngredient${i}`]} - ${obj[`strMeasure${i}`]}`);
-  // }
-
   const ingredients = [];
   for (let i = 1; obj[`strIngredient${i}`]; i++) {
     const ingredientName = obj[`strIngredient${i}`];
@@ -31,18 +26,8 @@ const Singleitem = ({ setCardClick, obj }) => {
         <h3>Tipologia Bicchiere :{obj.strGlass}</h3>
         <div className={styles.Lists}></div>
         <ul className={styles.IngredientsList}>
-          {/* <li>ingr :{obj.strIngredient1}</li>
-          <span>quantità :{obj.strMeasure1}</span>
-          <li>ingr :{obj.strIngredient2}</li>
-          <span>quanità :{obj.strMeasure2}</span>
-          <li>ingr :{obj.strIngredient3}</li>
-          <span>quantità :{obj.strMeasure3}</span> */}
-          {/* {ingredients.map((ingredient) => (
-            <li>{ingredient}</li>
-          ))} */}
-
-          {ingredients.map((ingredient) => (
-            <li>
+          {ingredients.map((ingredient, index) => (
+            <li key={index}>
               <img src={ingredient.image} alt={ingredient.name} />
               <span>{ingredient.name}</span>
               <span>{ingredient.quantity}</span>
@@ -58,10 +43,6 @@ const Singleitem = ({ setCardClick, obj }) => {
       </div>
       <div className={styles.Image}>
         <img src={obj.strDrinkThumb} alt={obj.stridDrink} />
-        {/* <div className={styles.Carousel}>
-          <button>prev</button>
-          <button>next</button>
-        </div> */}
       </div>
     </div>
   );

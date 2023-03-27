@@ -13,7 +13,7 @@ import Popup from "../src/popup";
 function App() {
   const [CocktailList, setCocktailList] = useState([]);
   const [Category, SetCategory] = useState("Cocktail");
-  const [filter, setfilter] = useState("");
+  const [filter, setfilter] = useState("a");
   const [cardWasClicked, setCardClick] = useState({
     isVisible: false,
     payload: {},
@@ -22,19 +22,12 @@ function App() {
   const [ReservationFormIsActive, SetReservationFormActive] = useState(false);
   const [IsPopUpUP, SetPopUpUp] = useState(false);
 
-  // useEffect(() => {
-  //   GET("/search.php?f=d").then(({ drinks }) => {
-  //     setCocktailList(() => drinks);
-  //   });
-  // }, []);
-
   useEffect(() => {
     GET(`search.php?f=${filter}`).then(({ drinks }) => {
       setCocktailList(() => drinks);
     });
   }, [filter]);
 
-  //nel database non esistono cocktails per le lettere u ed x
   const onhandleClicka = () => setfilter("a");
   const onhandleClickb = () => setfilter("b");
   const onhandleClickc = () => setfilter("c");
@@ -55,10 +48,10 @@ function App() {
   const onhandleClickr = () => setfilter("r");
   const onhandleClicks = () => setfilter("s");
   const onhandleClickt = () => setfilter("t");
-  // const onhandleClicku = () => setfilter("u");
+
   const onhandleClickv = () => setfilter("v");
   const onhandleClickw = () => setfilter("w");
-  // const onhandleClickx = () => setfilter("x");
+
   const onhandleClicky = () => setfilter("y");
   const onhandleClickz = () => setfilter("z");
 
@@ -73,22 +66,26 @@ function App() {
     setReservationDateFromChild(date);
   };
 
-  const [InputFullName, SetInputFullName] = useState("");
+  // const [InputFullName, SetInputFullName] = useState("");
 
-  const onHandleInput = (e) => SetInputFullName(() => e.target.value);
+  // const onHandleInput = (e) => SetInputFullName(() => e.target.value);
 
-  const onHandleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: trasmettere il valore della input (inputValue) all'elemento di ricerca
-    SetInputFullName();
-  };
+  // const searchCocktail = (cocktailName, cocktailList) => {
+  //   const foundCocktail = cocktailList.find(
+  //     (drink) => drink.strDrink.toLowerCase() === cocktailName.toLowerCase()
+  //   );
+  //   return foundCocktail;
+  // };
 
-  useEffect(() => {
-    GET(`search.php?s=${InputFullName}`).then(({ drinks }) => {
-      setCocktailList(() => drinks);
-    });
-  }, [InputFullName]);
-  //ancora non funziona bene perchè, li trova, ma per visualizzarli devo andare nella sezione dove sono presenti
+  // const onHandleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const searchedCocktail = searchCocktail(InputFullName, FullCocktailList);
+  //   if (searchedCocktail) {
+  //     setCocktailList([searchedCocktail]);
+  //   } else {
+
+  //   }
+  // };
 
   return (
     <div className={styles.App}>
@@ -109,7 +106,9 @@ function App() {
           <Hero SetCategory={SetCategory} />
           {/* <hr /> */}
           <p className={styles.Paragrafo}>
-            Con quale lettera inizia il nome del tuo Drink ?
+            Seleziona la tipologia di drink che stai cercando, e poi scegli
+            l'iniziale del tuo Drink! ( ... ricorda che nei cocktails devono
+            esserci almeno 3 ingredienti : base, modifier e profumo)
           </p>
           <div className={styles.Buttons}>
             {<button onClick={onhandleClicka}>A</button>}
@@ -132,15 +131,19 @@ function App() {
             {<button onClick={onhandleClickr}>R</button>}
             {<button onClick={onhandleClicks}>S</button>}
             {<button onClick={onhandleClickt}>T</button>}
-            {/* {<button onClick={onhandleClicku}>U</button>} */}
+
             {<button onClick={onhandleClickv}>V</button>}
             {<button onClick={onhandleClickw}>W</button>}
-            {/* {<button onClick={onhandleClickx}>X</button>} */}
+
             {<button onClick={onhandleClicky}>Y</button>}
             {<button onClick={onhandleClickz}>Z</button>}
           </div>
-          <form onSubmit={onHandleSubmit}>
-            <label htmlFor="text">Oppure digita l'iniziale..</label>
+          {/* <form onSubmit={onHandleSubmit}>
+            <label htmlFor="text">
+              {" "}
+              Seleziona la tipologia di Drink (Cocktail, Ordinary Drink, Beers..
+              e scrivi il nome per una ricerca più precisa!)
+            </label>
             <input
               value={InputFullName}
               onChange={onHandleInput}
@@ -148,12 +151,13 @@ function App() {
               placeholder="Cerca prodotto ..."
               required
             />
-          </form>
+          </form> */}
 
           <Content
             obj={filteredList(CocktailList, "strCategory", Category)}
             setCardClick={setCardClick}
           />
+
           <Footer />
         </>
       )}
